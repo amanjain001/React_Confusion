@@ -16,14 +16,14 @@ function RenderDish({dish,onClick}){
 
 
 const Menu=(props)=> {
-            console.log("MENU Render")
             const menu=props.dishes.map((dish)=>{
                 return(
                     <div key={dish.id} className="col-12 col-md-5 m-1">
                         <RenderDish dish={dish} onClick={props.onClick}/>
                     </div>
-                    );
-            });
+                      );
+                                                });
+            
             return(
                 <div className="container">
                     <div className="row">
@@ -31,7 +31,7 @@ const Menu=(props)=> {
                     </div>
                 </div>
                 
-                )
+                   )
         
     }
 
