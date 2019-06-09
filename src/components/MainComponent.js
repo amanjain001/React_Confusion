@@ -18,6 +18,7 @@ class Main extends Component{
         }
     
     render(){
+        console.log("Main Render")
         return(
             <div>
                 <Navbar dark color="primary">

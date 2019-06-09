@@ -2,6 +2,14 @@ import React,{Component} from 'react'
 import {Card,CardImg,CardTitle,CardBody,CardText} from 'reactstrap'
 class Dishdetail extends Component{
     
+     componentDidMount(){
+            console.log("Dish Mount")
+        }
+            
+    componentDidUpdate(){
+        console.log("DIsh Updated")
+    }
+    
     renderComments(comments){
         if(comments===null || comments.length===0){
             return(
@@ -61,6 +69,7 @@ class Dishdetail extends Component{
     }
     
     render(){
+        console.log("Dishdetail Render")
                if(this.props.dish!=null){
                    return(
                        this.renderDish()
