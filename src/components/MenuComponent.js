@@ -4,7 +4,8 @@ import {Card,CardImg,CardImgOverlay,CardTitle} from 'reactstrap'
 
 function RenderDish({dish,onClick}){
     return(
-        <Card onClick={()=>onClick(dish.id)} >
+        // <Card onClick={()=>onClick(dish.id)} >
+        <Card>
                 <CardImg width="100%" src={dish.image} alt={dish.name}/>
                     <CardImgOverlay>
                         <CardTitle>{dish.name}</CardTitle>
@@ -22,7 +23,7 @@ const Menu=(props)=> {
                         <RenderDish dish={dish} onClick={props.onClick}/>
                     </div>
                       );
-                                                });
+                                            });
             
             return(
                 <div className="container">

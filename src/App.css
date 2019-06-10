@@ -1,7 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+}
 .row-header{
     margin:0px auto;
     padding:0px auto;
 }
+
+html, body {
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
 
 .row-content {
     margin:0px auto;
@@ -14,6 +25,9 @@
     background-color: #D1C4E9;
     margin:0px auto;
     padding: 20px 0px 20px 0px;
+ 
+ 
+   
 }
 .jumbotron {
     padding:70px 30px 70px 30px;
@@ -31,3 +45,19 @@ address{
 .navbar-dark {
     background-color: #512DA8;
 }
+
+/*.App{*/
+/*    display: -webkit-box;*/
+/*  display: -ms-flexbox;*/
+/*  display: flex;*/
+/*  -webkit-box-orient: vertical;*/
+/*  -webkit-box-direction: normal;*/
+/*      -ms-flex-direction: column;*/
+/*          flex-direction: column;*/
+/*  min-height: 100%;*/
+/*}*/
+/*.header{*/
+/*    -webkit-box-flex: 1;*/
+/*      -ms-flex: 1;*/
+/*          flex: 1;*/
+/*}*/
