@@ -5,6 +5,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent'
 import Contact from './ContactComponent'
+import About from './AboutComponent.js'
 import {DISHES} from '../shared/dishes.js'
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
@@ -23,9 +24,13 @@ class Main extends Component{
         }
     }
     
-      onDishSelect(dishId){
-            this.setState({selectedDishId:dishId})
-        }
+    //   onDishSelect(dishId){
+    //         this.setState({selectedDishId:dishId})
+    //     }
+    
+    
+    
+    
     
     render(){
         const HomePage=()=>{
@@ -34,7 +39,17 @@ class Main extends Component{
                          leader={this.state.leaders.filter((leader) => leader.featured)[0]}
              />);
         }
-        console.log("Main Render")
+        
+        const DishWithId = ({match}) => {
+        return(
+            <Dishdetail dish={this.state.dishes.filter((dish)=>dish.id=== parseInt(match.params.dishId,10))[0]}
+                                                       
+            comments={this.state.comments.filter((comment)=>comment.dishId===
+                                                        parseInt(match.params.dishId,10))} />
+                                                        )
+            
+        }
+        
         return(
             <>
                 {/*<Header />
@@ -45,7 +60,9 @@ class Main extends Component{
                 <Switch>
                  <Route path='/home' component={HomePage} />
                  <Route exact path='/contactus' component={Contact} />
+                 <Route exact path='/aboutus' component={()=><About leaders={this.state.leaders} />} />
                  <Route exact path='/menu' component={()=><Menu dishes= {this.state.dishes} /> } />
+                 <Route path='/menu/:dishId' component={DishWithId} />
                  <Redirect to='/home' />
                 </Switch>
                 <Footer/>
